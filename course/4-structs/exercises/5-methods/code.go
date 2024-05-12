@@ -7,9 +7,9 @@ type authenticationInfo struct {
 	password string
 }
 
-// ?
-
-// don't touch below this line
+func (r authenticationInfo) getBasicAuth() string {
+	return fmt.Sprintf("Authorization: Basic %s:%s", r.username, r.password)
+}
 
 func test(authInfo authenticationInfo) {
 	fmt.Println(authInfo.getBasicAuth())
