@@ -4,14 +4,13 @@ import "fmt"
 
 type sender struct {
 	rateLimit int
+	user
 }
 
 type user struct {
 	name   string
 	number int
 }
-
-// don't edit below this line
 
 func test(s sender) {
 	fmt.Println("Sender name:", s.name)
