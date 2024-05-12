@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 type messageToSend struct {
+	phoneNumber int
+	message     string
 }
-
-// don't edit below this line
 
 func test(m messageToSend) {
 	fmt.Printf("Sending message: '%s' to: %v\n", m.message, m.phoneNumber)
