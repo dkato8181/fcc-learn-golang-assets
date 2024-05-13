@@ -5,10 +5,15 @@ import (
 )
 
 func getExpenseReport(e expense) (string, float64) {
-	// ?
+	switch ex := e.(type) {
+	case email:
+		return ex.toAddress, ex.cost()
+	case sms:
+		return ex.toPhoneNumber, ex.cost()
+	default:
+		return "", ex.cost()
+	}
 }
-
-// don't touch below this line
 
 func (e email) cost() float64 {
 	if !e.isSubscribed {
