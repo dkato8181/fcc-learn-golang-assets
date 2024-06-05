@@ -3,7 +3,20 @@ package main
 import "fmt"
 
 func createMatrix(rows, cols int) [][]int {
-	// ?
+	matrix := [][]int{}
+	for i := 0; i < rows; i++ {
+		row := []int{}
+		for j := 0; j < cols; j++ {
+			// if i == 0 || j == 0 {
+			// 	row = append(row, 0)
+			// 	continue
+			// }
+			row = append(row, j*i)
+		}
+		matrix = append(matrix, row)
+	}
+
+	return matrix
 }
 
 // dont edit below this line
